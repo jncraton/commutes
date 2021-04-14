@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+    <style>
+      body {
+        line-height:1.5em;
+        font-family:noto sans, sans serif;
+        padding:2em;
+      }
+      table {
+        margin: 2em 0;
+        width:100%;
+        table-layout: fixed;
+        border:1px solid #ccc;
+        border-spacing:0;
+        border-collapse:collapse;
+      }
+      thead {
+        border:1px solid #ccc;
+        font-weight:800;
+      }
+      tr {
+        white-space:nowrap;
+      }
+      tbody > tr:nth-child(2n+1) {
+        background-color:#eee;
+      }
+      td {
+        overflow:hidden;
+        text-overflow:ellipsis;
+        text-align:center;
+        padding:.3em 0;
+      }
+      input {
+        text-align:center;
+      }
+    </style>
+  </head>
+
+  <body>
+      <label>Sort by
+        <select name=sort>
+            <option value=city>City</option>
+            <option value=commuteTime>Commute Time</option>
+        </select>
+      </label>
+      <label>Descending <input name=desc type=checkbox /></label>
+      <table>
+      <thead>
+        <tr>
+          <td>State</td>
+          <td>City</td>
+          <td>Year</td>
+          <td>Commute Time</td>
+        <tr>
+        <tr>
+          <td><input name=state size=10 value=IN /></td>
+          <td><input name=city size=10 value=Anderson /></td>
+          <td><input name=year size=10 value=2015 /></td>
+          <td><input name=commuteTime type=number size=10 value=0 /></td>
+        <tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <div id=average></div>
+  
+    <script src=main.js></script>
+  </body>
+</html>
