@@ -71,9 +71,7 @@ let data = []
 window.fetch('https://datausa.io/api/data?measure=Average%20Commute%20Time&drilldowns=PUMA')
   .then(response => response.json())
   .then(body => {
-    data = body.data
-
-    data = data.map(row => {
+    data = body.data.map(row => {
       row.commuteTime = parseFloat(row['Average Commute Time'])
       row.year = row.Year
       return row
